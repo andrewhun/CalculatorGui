@@ -1,0 +1,5 @@
+com\andrewhun\calculator\DisplayHandlerTestCase.class
+com\andrewhun\calculator\CalculationHandlerTestCase.class
+com\andrewhun\calculator\TestFXBaseClass.class
+com\andrewhun\calculator\ControllerTestCase.class
+com\andrewhun\calculator\MainTestCase.class

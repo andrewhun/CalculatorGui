@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.andrewhun.calculator.Controller">
+   <children>
+      <GridPane alignment="center" hgap="10" layoutY="100.0" maxHeight="300.0" maxWidth="300.0" prefHeight="300.0" prefWidth="300.0" vgap="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <columnConstraints>
+            <ColumnConstraints maxWidth="55.0" prefWidth="55.0" />
+            <ColumnConstraints maxWidth="40.0" prefWidth="40.0" />
+            <ColumnConstraints maxWidth="30.0" prefWidth="30.0" />
+            <ColumnConstraints prefWidth="30.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="25.0" prefHeight="25.0" />
+            <RowConstraints maxHeight="25.0" prefHeight="25.0" />
+            <RowConstraints maxHeight="25.0" prefHeight="25.0" />
+            <RowConstraints maxHeight="25.0" prefHeight="25.0" />
+            <RowConstraints maxHeight="25.0" prefHeight="25.0" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="plusBtn" mnemonicParsing="false" onAction="#initiateAddition" prefHeight="25.0" prefWidth="53.0" text="+" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#selectActionForDigits" prefHeight="25.0" prefWidth="51.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#selectActionForDigits" prefHeight="25.0" prefWidth="56.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#selectActionForDigits" prefHeight="25.0" prefWidth="61.0" text="7" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#selectActionForDigits" prefHeight="25.0" prefWidth="60.0" text="4" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#selectActionForDigits" prefHeight="25.0" prefWidth="56.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#selectActionForDigits" prefHeight="25.0" prefWidth="52.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="minusBtn" mnemonicParsing="false" onAction="#initiateSubtraction" prefHeight="25.0" prefWidth="53.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button fx:id="oneBtn" mnemonicParsing="false" onAction="#selectActionForDigits" prefHeight="25.0" prefWidth="61.0" text="1" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#selectActionForDigits" prefHeight="25.0" prefWidth="58.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#selectActionForDigits" prefHeight="25.0" prefWidth="37.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button fx:id="asterisk" mnemonicParsing="false" onAction="#initiateMultiplication" prefHeight="25.0" prefWidth="32.0" text="*" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button fx:id="decimalPoint" mnemonicParsing="false" onAction="#addDecimalPoint" prefHeight="25.0" prefWidth="74.0" text="." GridPane.rowIndex="4" />
+            <Button fx:id="zeroBtn" mnemonicParsing="false" onAction="#selectActionForDigits" prefHeight="25.0" prefWidth="52.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="41.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button fx:id="slash" mnemonicParsing="false" onAction="#initiateDivision" prefHeight="35.0" prefWidth="41.0" text="/" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Button fx:id="clearBtn" mnemonicParsing="false" onAction="#clearCalculator" prefHeight="29.0" prefWidth="53.0" text="C" textAlignment="CENTER" GridPane.columnIndex="3" />
+            <Button fx:id="backspace" mnemonicParsing="false" onAction="#selectActionForBackspace" prefHeight="33.0" prefWidth="54.0" text="Backspace">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Button>
+            <Button fx:id="plusMinus" mnemonicParsing="false" onAction="#changeSignOfNumber" prefHeight="28.0" prefWidth="53.0" text="+/-" GridPane.columnIndex="1" />
+            <Button fx:id="equalsBtn" mnemonicParsing="false" onAction="#calculateResult" prefHeight="29.0" prefWidth="52.0" text="=" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+      <HBox layoutX="41.0" layoutY="22.0" maxHeight="75.0" maxWidth="200.0" prefHeight="75.0" prefWidth="200.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <AnchorPane maxHeight="75.0" prefHeight="75.0" prefWidth="256.0">
+               <children>
+                  <Label fx:id="displayedNumber" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutY="38.0" maxHeight="40.0" maxWidth="200.0" prefHeight="40.0" prefWidth="200.0" text="0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="5.0" />
+                  <Label fx:id="topDisplay" alignment="CENTER_RIGHT" layoutX="125.0" layoutY="6.0" maxHeight="30.0" maxWidth="200.0" prefHeight="30.0" prefWidth="200.0" textAlignment="RIGHT" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children></HBox>
+   </children>
+</AnchorPane>
